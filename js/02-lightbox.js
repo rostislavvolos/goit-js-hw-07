@@ -4,7 +4,7 @@ const divGallery = document.querySelector(".gallery");
 
 
 const imgItem = galleryItems.map(item => {
-    return `<div class="gallery__item">
+    return `<li class="gallery__item">
     <a class="gallery__link" href=${item.original}>
       <img
         class="gallery__image"
@@ -13,13 +13,12 @@ const imgItem = galleryItems.map(item => {
         alt="${item.description}"
       />
     </a>
-    </div>`
+    </li>`
 }).join("");
 // Change code below this line
 
 
 divGallery.insertAdjacentHTML("afterbegin", imgItem);
-
 
 
 const lightbox = new SimpleLightbox('.gallery a', {captionsData: "alt", captionDelay: 250});
